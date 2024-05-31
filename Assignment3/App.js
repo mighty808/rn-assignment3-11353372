@@ -35,7 +35,8 @@ export default function App() {
     <FlatList
         data={DATA}
         renderItem={({item}) => <Item title={item.title} />}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.key}
+        style={styles.ongoinglist}
       />
     
     </SafeAreaView>
@@ -47,17 +48,27 @@ export default function App() {
 
 const DATA = [
   {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    key: '1',
     title: 'Mobile App Development',
   },
   {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
+    key: '2',
+    title: 'Web Development',
   },
   {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
+    key: '3',
+    title: 'Push Ups',
   },
+  {
+    key: '4',
+    title: '202 Assignment',
+  },
+  {
+    key: '5',
+    title: 'Meeting with Mr. Nii',
+  },
+
+  
 ];
 
 const Item = ({title}) => (
@@ -125,7 +136,7 @@ search: {
     marginVertical: 8,
     marginHorizontal: 16,
     borderRadius: 20,
-    borderColor: '#000',
+    borderColor: '#E8D1BA',
   },
 
   title: {

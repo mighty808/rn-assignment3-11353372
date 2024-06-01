@@ -6,13 +6,15 @@ import Category from './components/Category'
 
 export default function App() {
   return (
-    
+    <ScrollView>
       <SafeAreaView style={styles.container}>
       <Header />
       <Category />
       <OngoingTask />
       <StatusBar style="auto" />
     </SafeAreaView>
+    </ScrollView>
+      
       
     
   );

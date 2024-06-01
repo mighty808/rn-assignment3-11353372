@@ -14,6 +14,7 @@ export default function App() {
 
     <View style={styles.imgsection}>
         <TextInput placeholder='Search' style={styles.search}/>
+        <Image source={require('../search.png')} style={styles.image3}/>
         <Image source={require('../filter.png')} style={styles.image2}/>
       </View>
 
@@ -43,10 +44,11 @@ textContainer: {
 
 search: {
     backgroundColor: '#ffff',
-    width: 260,
+    width: 230,
     height: 45,
     borderRadius: 10,
     marginLeft: 20,
+    marginRight: 0
   },
   
 text1: {
@@ -70,5 +72,13 @@ image2: {
     height: 35,
     marginRight: 18,
   },
-  
+  image3: {
+    width: 25,
+    height: 25,
+    marginRight: 18,
+    borderStyle: 'solid',
+    backgroundColor: '#fff',
+    padding: 18,
+    marginLeft: 0,
+  },
 });

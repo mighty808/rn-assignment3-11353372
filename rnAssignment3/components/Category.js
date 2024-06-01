@@ -4,65 +4,86 @@ import { SafeAreaView, StyleSheet, Text, View, Image, TextInput, Button, FlatLis
 export default function App() {
   return (
     <View>
-        <View>
-    <Text style={styles.categories}>Ongoing Task</Text>
-  </View>
-
-<FlatList
-        horizontal
-        data={DATA}
-        renderItem={({item}) => <Item title={item.title} />}
-        keyExtractor={item => item.key}
-        style={styles.ongoinglist}
-      />
-    </View>
+        <Text style={styles.sectionTitle}>Categories</Text>
+      <View style={styles.categoriesContainer}>
+  <FlatList
+    data={categories}
+    horizontal={true}
+    showsHorizontalScrollIndicator={false}
+    renderItem={({ item }) => (
+      <View style={styles.categoryCard}>
+        <Image style={styles.categoryImage} source={item.image} />
+        <Text style={styles.categoryName}>{item.name}</Text>
+        <Text style={styles.categoryTasks}>{item.tasks} Tasks</Text>
+      </View>
+    )}
+  />
+</View>
     
-
+</View>
   );
 }
 
-const DATA = [
-  {
-    id: '1',
-    image: require('../profilepic.png'),
-    text: 'Beautiful Sunset',
-  },
-  {
-    id: '2',
-    image: require('../profilepic.png'),
-    text: 'Snowy Mountains',
-  },
-  // Add more items as needed
+const categories = [
+  { id: '1', name: 'Exercise', tasks: 12, image: require('../assets/desking.png') },
+  { id: '2', name: 'Study', tasks: 12, image: require('../assets/sitting.png') },
+  { id: '3', name: 'Exercise', tasks: 12, image: require('../assets/desking.png') },
+  { id: '4', name: 'Study', tasks: 12, image: require('../assets/sitting.png') },
+  { id: '5', name: 'Exercise', tasks: 12, image: require('../assets/desking.png') },
+  { id: '6', name: 'Study', tasks: 12, image: require('../assets/sitting.png') },
+  
 ];
   
   
-  const Item = ({title}) => (
-    <View style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
-    </View>
-  );
-    
 
 const styles = StyleSheet.create({
-    categories: {
-        fontSize: 22,
-        fontWeight: '600',
+    filterIcon: {
+        width: 30,
+        height: 30,
+      },
+      sectionTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 10,
         marginLeft: 20,
         marginTop: 20,
-      },    
-  
-      item: {
-        backgroundColor: '#fff',
-        padding: 42,
-        marginVertical: 8,
-        marginHorizontal: 16,
-        borderRadius: 20,
-        borderColor: '#E8D1BA',
       },
-    
-      title: {
-        fontSize: 20,
-        fontWeight: '500',
+      categoriesContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        marginBottom: 20,
+      },
+      categoryCard: {
+        width: 150,
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        padding: 25,
+        marginBottom: 10,
+        marginLeft: 20,
+        alignItems: 'center',
+      },
+      categoryImage: {
+        width: 80,
+        height: 80,
+        marginBottom: 10,
+      },
+      categoryName: {
+        fontSize: 16,
+        fontWeight: 'bold',
+      },
+      categoryTasks: {
+        fontSize: 14,
+        color: '#777',
+      },
+      taskCard: {
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        padding: 20,
+        marginBottom: 10,
+      },
+      taskName: {
+        fontSize: 16,
       },
     
 });

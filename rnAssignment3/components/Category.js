@@ -27,10 +27,12 @@ export default function App() {
 const categories = [
   { id: '1', name: 'Exercise', tasks: 12, image: require('../assets/desking.png') },
   { id: '2', name: 'Study', tasks: 12, image: require('../assets/sitting.png') },
-  { id: '3', name: 'Exercise', tasks: 12, image: require('../assets/desking.png') },
-  { id: '4', name: 'Study', tasks: 12, image: require('../assets/sitting.png') },
-  { id: '5', name: 'Exercise', tasks: 12, image: require('../assets/desking.png') },
-  { id: '6', name: 'Study', tasks: 12, image: require('../assets/sitting.png') },
+  { id: '3', name: 'Code', tasks: 12, image: require('../assets/coding.png') },
+  { id: '4', name: 'Cook', tasks: 12, image: require('../assets/cooking.png') },
+  { id: '5', name: 'Drive', tasks: 12, image: require('../assets/driver.png') },
+  { id: '6', name: 'Sleep', tasks: 12, image: require('../assets/sleep.png') },
+  { id: '7', name: 'Travel', tasks: 12, image: require('../assets/travelling.png') },
+  { id: '8', name: 'Game', tasks: 12, image: require('../assets/controller.png') },
   
 ];
   
